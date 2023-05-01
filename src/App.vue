@@ -110,14 +110,13 @@ export default {
         <div
           @click="selectCard(index)"
           :class="{
-            'bg-emerald-400 hover:bg-emerald-400':
+            'bg-emerald-400 hover:bg-emerald-400 cursor-pointer':
               index === selectedCard && winFlag == undefined,
             'bg-yellow-300 hover:bg-yellow-300 cursor-default':
               item === 'Kecske',
-            'bg-slate-300 hover:bg-slate-200': item !== 'Kecske',
-            'bg-green-600 hover:bg-green-600': item === 'Autó',
+            'bg-slate-300 hover:bg-slate-200 cursor-pointer': item !== 'Kecske' && index !== selectedCard,
           }"
-          class="elevation-4 col-span-3 h-3/4 mt-auto mb-auto rounded-3xl flex items-center justify-center cursor-pointer"
+          class="elevation-4 col-span-3 h-3/4 mt-auto mb-auto rounded-3xl flex items-center justify-center"
         >
           <h1 class="text-6xl">{{ item }}</h1>
         </div>
@@ -129,7 +128,7 @@ export default {
             'bg-emerald-400 hover:bg-emerald-400':
               i === selectedCard && winFlag == undefined,
             'bg-yellow-300 hover:bg-yellow-300': item === 'Kecske',
-            'bg-slate-200 hover:bg-slate-200': item !== 'Kecske',
+            'bg-slate-200 hover:bg-slate-200': item !== 'Kecske' && i !== winningCard,
             'bg-green-600 hover:bg-green-600': item === 'Autó',
           }"
           class="elevation-4 col-span-3 h-3/4 mt-auto mb-auto rounded-3xl flex items-center justify-center"
